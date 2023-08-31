@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" >
+	<title>Hasapp</title>
+</head>
+<body>
+	<div class="button-container">
+        <button class="fullscreen-button" id="fullscreenButton" onclick="toggleFullScreen()">
+            <i class="fullscreen-icon fas fa-expand"></i>
+        </button>
+    </div>
+
+<script>
+function toggleFullScreen() {
+    var doc = window.document;
+    var docEl = doc.documentElement;
+
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+    
+    // Получаем элементы кнопки и иконки
+    var button = document.getElementById("fullscreenButton");
+    var icon = button.querySelector(".fullscreen-icon");
+
+    // Переключаем класс иконки и меняем её состояние
+    if (icon.classList.contains("fa-expand")) {
+        icon.classList.remove("fa-expand");
+        icon.classList.add("fa-compress");
+    } else {
+        icon.classList.remove("fa-compress");
+        icon.classList.add("fa-expand");
+    }
+
+    // Переключаем класс иконки и меняем её состояние
+    if (icon.classList.contains("fa-expand")) {
+        icon.classList.remove("fa-expand");
+        icon.classList.add("fa-compress");
+    } else {
+        icon.classList.remove("fa-compress");
+        icon.classList.add("fa-expand");
+    }
+
+    if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+        requestFullScreen.call(docEl);
+    } else {
+        cancelFullScreen.call(doc);
+    }
+}
+</script>
+</body>
+</html>

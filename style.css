@@ -1,0 +1,47 @@
+* {
+    font-family: 'JetBrains Mono', serif;
+    background-color: black;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+/* Стили для кнопки */
+.fullscreen-button {
+/*    background-color: #3498db;*/
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Стили для иконки */
+.fullscreen-icon {
+    transition: transform 0.3s;
+}
+
+/* Стили для кнопки при наведении */
+.fullscreen-button:hover {
+/*    background-color: #2980b9;*/
+    background-color: #85bb65;
+}
+
+.button-container {
+    background-color: #85bb65;
+    transition: background-color 0.9s;
+    border-radius: 3px;
+}
+
+/* Стили для иконки при наведении */
+.fullscreen-button:hover .fullscreen-icon {
+    transform: rotate(90deg);
+}
